@@ -7,7 +7,7 @@ This guide assumes you have ruby / rvm already installed.
 
 Clone this repo:
 
-    git clone git@bitbucket.org:ctacdevteam/ctac_company_site.git
+    git clone git@github.com:dvito/nanoc_blog.git
 
 Run Bundle:
 
