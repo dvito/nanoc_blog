@@ -1,0 +1,18 @@
+<% render 'default' do %>
+  <div class="container" id="single-post">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <img src="<%= item[:thumbnail] %>" class="img-responsive">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h1><%= item[:title] %></h1>
+        <aside>Posted at: <%= get_pretty_date(item) %></aside>
+        <article>
+          <%= yield %>
+        </article>
+      </div>
+    </div>
+  </div>
+<% end %>

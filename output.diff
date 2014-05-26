@@ -1,0 +1,120 @@
+--- output/index.html
++++ output/index.html
+@@ -105,10 +105,10 @@
+               <a href="index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="index.html">CAREERS</a>
++              <a href="index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="">
+-              <a href="blog/index.html">BLOG</a>
++              <a href="blog/index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>
+--- output/posts/2012-02-10-my-first-post/index.html
++++ output/posts/2012-02-10-my-first-post/index.html
+@@ -105,10 +105,10 @@
+               <a href="../../index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="../../index.html">CAREERS</a>
++              <a href="../../index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="">
+-              <a href="../../blog/index.html">BLOG</a>
++              <a href="../../blog/index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>
+--- output/posts/2012-02-12-help-have-you-seen-my-cats/index.html
++++ output/posts/2012-02-12-help-have-you-seen-my-cats/index.html
+@@ -105,10 +105,10 @@
+               <a href="../../index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="../../index.html">CAREERS</a>
++              <a href="../../index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="">
+-              <a href="../../blog/index.html">BLOG</a>
++              <a href="../../blog/index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>
+--- output/posts/2012-02-13-help-have-you-seen-my-cats/index.html
++++ output/posts/2012-02-13-help-have-you-seen-my-cats/index.html
+@@ -105,10 +105,10 @@
+               <a href="../../index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="../../index.html">CAREERS</a>
++              <a href="../../index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="">
+-              <a href="../../blog/index.html">BLOG</a>
++              <a href="../../blog/index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>
+--- output/posts/2012-02-14-help-have-you-seen-my-cats/index.html
++++ output/posts/2012-02-14-help-have-you-seen-my-cats/index.html
+@@ -105,10 +105,10 @@
+               <a href="../../index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="../../index.html">CAREERS</a>
++              <a href="../../index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="">
+-              <a href="../../blog/index.html">BLOG</a>
++              <a href="../../blog/index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>
+--- output/posts/2012-02-15-help-have-you-seen-my-cats/index.html
++++ output/posts/2012-02-15-help-have-you-seen-my-cats/index.html
+@@ -105,10 +105,10 @@
+               <a href="../../index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="../../index.html">CAREERS</a>
++              <a href="../../index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="">
+-              <a href="../../blog/index.html">BLOG</a>
++              <a href="../../blog/index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>
+--- output/posts/2012-02-16-my-first-post/index.html
++++ output/posts/2012-02-16-my-first-post/index.html
+@@ -105,10 +105,10 @@
+               <a href="../../index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="../../index.html">CAREERS</a>
++              <a href="../../index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="">
+-              <a href="../../blog/index.html">BLOG</a>
++              <a href="../../blog/index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>
+--- output/blog/index.html
++++ output/blog/index.html
+@@ -105,10 +105,10 @@
+               <a href="../index.html#contact">CONTACT</a>
+             </li>
+             <li class="">
+-              <a href="../index.html">CAREERS</a>
++              <a href="../index.html">CAREERS <i class="fa fa-external-link"></i></a>
+             </li>
+             <li class="active">
+-              <a href="index.html">BLOG</a>
++              <a href="index.html">BLOG <i class="fa fa-external-link"></i></a>
+             </li>
+           </ul>
+         </div>

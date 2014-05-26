@@ -1,0 +1,24 @@
+<div id="blog-introduction" class="container-fluid"></div>
+<div id="blog-posts-container" class="container">
+  <% sorted_articles.each_slice(3) do |posts_group| %>
+    <div class="row">
+      <% posts_group.each do |post| %>
+        <div class="col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <a href="<%= post.path %>">
+                <img src="<%= post[:thumbnail] %>" class="img-responsive" alt="Post Thumbnail">
+              </a>
+              <h1><%= link_to post[:title], post.path %></h1>
+              <aside>Posted at: <%= get_pretty_date(post) %></aside>
+              <article>
+                <%= get_post_start(post) %>
+              </article>
+              <div class='read-more'><a href='<%= post.path %>' class='btn btn-default'>Continue reading &rsaquo;</a></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

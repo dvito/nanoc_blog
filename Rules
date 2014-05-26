@@ -1,0 +1,89 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The string given to #compile and #route are matching patterns for
+#   identifiers--not for paths. Therefore, you can’t match on extension.
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
+unless defined? LOADED_DEFAULT_CONFIG
+  LOADED_DEFAULT_CONFIG = true
+  require 'compass'
+  Compass.add_project_configuration 'compass/config.rb' # when using Compass 0.10
+end
+
+compile '/assets/stylesheets/*' do
+  if item[:extension] == 'scss'
+    filter :sass, Compass.sass_engine_options.merge(:syntax => item[:extension].to_sym)
+    filter :relativize_paths, :type => :css
+  end
+end
+
+compile '/assets/javascripts/*' do
+   filter :uglify_js
+end
+
+compile '/static/*' do
+  # nothing at all! https://www.youtube.com/watch?v=i6vPQL_aYfI
+end
+
+compile '/posts/*' do
+
+  filter :colorize_syntax,
+    :coderay => {:line_numbers => :table}
+  filter :kramdown
+  layout 'post'
+  filter :html_compress
+  filter :relativize_paths, :type => :html
+end
+
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  # default items to just default layout
+  elsif item[:extension] == 'md'
+    filter :kramdown
+    filter :colorize_syntax
+    layout 'default'
+    filter :html_compress
+    filter :relativize_paths, :type => :html
+  # assume its an erb/catchall
+  else
+    filter :erb
+    filter :colorize_syntax
+    layout 'default'
+    filter :html_compress
+    filter :relativize_paths, :type => :html
+  end
+end
+
+
+route '/assets/*' do
+  # flatten assets to the output/assets directory a la rails
+  extension = if item[:extension] =~ /ss$/ then 'css' else item[:extension] end
+  '/assets/' + File.basename(item.identifier) + '.' + extension
+end
+
+passthrough '/bootstrap/*'
+
+route '*' do
+  if item.binary?
+    # Write item with identifier /foo/ to /foo.ext
+    item.identifier.chop + '.' + item[:extension]
+  elsif item[:extension] == "txt"
+    item.identifier.chop + '.' + item[:extension]
+  else
+    # Write item with identifier /foo/ to /foo/index.html
+    item.identifier + 'index.html'
+  end
+end
+
+layout '*', :erb, :format => :html5

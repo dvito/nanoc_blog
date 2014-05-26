@@ -1,0 +1,89 @@
+<!-- This template is the default overarching template. It should only contain things such as the header and footer -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>justinrain.es</title>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+    <!-- CSS File, using SASS -->
+    <link rel="stylesheet" href="/assets/stylesheet.css">
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/font-awesome.css">
+    <%= content_for(@item, :additional_css) %>
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand" id="dvito-header" title="justinrain.es">JustinRain.es</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav hidden-xs pull-right">
+            <li class="<%= "active" if @item.identifier == "/" || @item.identifier == "/index.html" %>">
+              <a id="blog-header" class="nav-link" href="/index.html">
+                <i class="fa fa-list"></i> BLOG
+              </a>
+            </li>
+            <li class="<%= "active" if @item.identifier.include? "projects" %>">
+              <a id="project-header" class="nav-link" href="/projects/">
+                <i class="fa fa-code"></i> PROJECTS
+              </a>
+            </li>
+            <li class="<%= "active" if @item.identifier.include? "about" %>">
+              <a id="about-header" class="nav-link" href="/about/">
+                <i class="fa fa-code"></i> ABOUT
+              </a>
+            </li>
+          </ul>
+         <ul class="nav navbar-nav visible-xs">
+            <li class="<%= "active" if @item.identifier == "/" || @item.identifier == "/index.html" %>">
+              <a href="/index.html"><i class="fa fa-list"></i> BLOG</a>
+            </li>
+            <li class="<%= "active" if @item.identifier.include? "projects"%>">
+              <a href="/projects/"><i class="fa fa-code"></i> WORK</a>
+            </li>
+            <li class="<%= "active" if @item.identifier.include? "about"%>">
+              <a href="/about/"><i class="fa fa-code"></i> ABOUT</a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- This is the outlet for the next level template -->
+    <%= yield %>
+
+    <!-- This is the footer, Treat it with Respect -->
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="text-muted">Powered with Nanoc, Bootstrap, and a bunch of messing around.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/bootstrap.js"></script>
+    <%= content_for(@item, :additional_javascript) %>
+  </body>
+</html>
